@@ -4,36 +4,43 @@ public class bingo {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		Random gerarNumero = new Random();
+		Random geradorNumero = new Random();
 		
-		String r;
-		String x;
-		int resultado;
+		String marcarNum;
+		String girarNumeros;
+		String cartela;
+		int numSorteado;
         int[] num = new int[24];
-        
 
-        System.out.println("Digite --| R |-- para inciar o bingo...");
-        r = sc.next();
+        System.out.println("---BEM VINDO---");
+        System.out.println("Digite --| S |-- para iniciar o BINGO:");
+        girarNumeros = sc.next();
         
       
         for(int i=0; i<num.length; i++){
-             resultado = gerarNumero.nextInt(98) + 1;
+             numSorteado = geradorNumero.nextInt(98) + 1;
+             System.out.println("Digite --| R |-- para Sortear um numero...");
+             marcarNum = sc.next();
              for(int j=0; j<num.length; j++){
-                   if(resultado == num[j] && j != i){
-                      resultado = gerarNumero.nextInt(98) + 1;
+                   if(numSorteado == num[j] && j != i){
+                	   numSorteado = geradorNumero.nextInt(98) + 1;
                    }
                    else{
-                        num[i] = resultado;
+                        num[i] = numSorteado;
                    }
              }
+             System.out.printf(" -->  %d  <--%n", num[i]);
+             System.out.println();
         }
         
-        System.out.println("Digite --| X |-- para exibir os numeros Sorteados:");
-        x = sc.next();
+        System.out.println("Digite --| X |-- para exibir todos os numeros Sorteados:");
+        cartela = sc.next();
         
         
         for(int i=0; i<num.length; i++){
         	 System.out.printf(" %d |", num[i]);
         }
+        
+       sc.close();
 	}
 }
