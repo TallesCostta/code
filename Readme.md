@@ -1,0 +1,1 @@
+Olá, Esse repositório é apenas um hospedeiro de codigos fontes de alguns projetos em desenvolvimento.
